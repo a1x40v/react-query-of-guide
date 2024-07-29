@@ -1,9 +1,7 @@
 const BASE_URL = 'http://localhost:3000';
 
-export async function getData(bookId) {
-    const url = `${BASE_URL}/books/${bookId}`;
-  
-    const response = await fetch(url);
+export async function getData(url) {
+    const response = await fetch(`${BASE_URL}/${url}`);
   
     if (!response.ok)
     {

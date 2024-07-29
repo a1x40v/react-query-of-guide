@@ -75,3 +75,29 @@ button:focus-visible {
   padding: 6px;
   border: 1px solid #cccccc;
 }
+
+.author-tabs__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.author-tabs__item {
+  padding: 12px;
+  background-color: rgb(238, 202, 111);
+}
+
+.author-tabs__item:not(.author-tabs__item--selected):hover
+{
+  cursor: pointer;
+  background-color: rgb(235, 190, 76);
+}
+
+.author-tabs__item + .author-tabs__item {
+  margin-left: 12px;
+}
+
+.author-tabs__item--selected {
+  background-color: rgb(235, 179, 38);
+}

@@ -3,20 +3,38 @@
     {
       "id": 1,
       "title": "The Hobbit",
-      "authors": ["J.R.R. Tolkien"],
-      "thumbnail": "https://m.media-amazon.com/images/I/712cDO7d73L._AC_UF1000,1000_QL80_.jpg"
+      "author": "J.R.R. Tolkien",
+      "thumbnail": "the-hobbit.jpg"
     },
     {
       "id": 2,
       "title": "The Fellowship Of The Ring",
-      "authors": ["J.R.R. Tolkien"],
-      "thumbnail": "https://m.media-amazon.com/images/I/71Ep7UNeTtL._AC_UF1000,1000_QL80_.jpg"
+      "author": "J.R.R. Tolkien",
+      "thumbnail": "the-fellowship-of-the-ring.jpg"
     },
     {
       "id": 3,
       "title": "The Two Towers",
-      "authors": ["J.R.R. Tolkien"],
-      "thumbnail": "https://m.media-amazon.com/images/I/41HkOD2+e1L.jpg"
+      "author": "J.R.R. Tolkien",
+      "thumbnail": "the-two-towers.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": "J. K. Rowling",
+      "thumbnail": "harry-potter-1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Harry Potter and the Chamber of Secrets",
+      "author": "J. K. Rowling",
+      "thumbnail": "harry-potter-2.png"
+    },
+    {
+      "id": 6,
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "author": "J. K. Rowling",
+      "thumbnail": "harry-potter-3.jpg"
     }
   ]
 }

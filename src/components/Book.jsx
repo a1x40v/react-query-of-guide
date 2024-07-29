@@ -47,7 +47,7 @@ const Book = ({ bookId }) => {
       </div>
       <div>
         <h2>{data.title}</h2>
-        <small>{data.authors.join(', ')}</small>
+        <small>{data.author}</small>
       </div>
       <div className="checkout-wrapper">
         <button>Check Out</button>
