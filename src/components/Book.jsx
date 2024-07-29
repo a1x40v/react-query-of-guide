@@ -1,32 +1,36 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-const BASE_URL = 'http://localhost:3000';
-
-async function getData(bookId) {
-  const url = `${BASE_URL}/books/${bookId}`;
-
-  const response = await fetch(url);
-
-  if (!response.ok)
-  {
-    throw new Error("Unable to fetch")
-  }
-
-  const data = await response.json();
-
-  return data;
-}
+import { getData } from '../utils/getData';
+import {
+  BackgroundUpdateInProgress,
+  StaleMessage,
+  UpToDate,
+} from './MessageComponents';
 
 function useBook(bookId) {
   return useQuery({
     queryKey: ['book', bookId],
-    queryFn: () => getData(bookId)
+    queryFn: () => getData(bookId),
+    staleTime: 5000,
   });
 }
 
+const CheckoutMessage = ({ isFetching, isStale, refetch }) => {
+  if (isFetching) {
+    return <BackgroundUpdateInProgress />;
+  }
+
+  if (isStale) {
+    return <StaleMessage refetch={refetch} />;
+  }
+
+  return <UpToDate />;
+};
+
 const Book = ({ bookId }) => {
-  const { data, isPending, isError } = useBook(bookId);
+  const { data, isPending, isError, isFetching, isStale, refetch } =
+    useBook(bookId);
 
   if (isError) {
     return <div>Error fetching book data.</div>;
@@ -44,6 +48,14 @@ const Book = ({ bookId }) => {
       <div>
         <h2>{data.title}</h2>
         <small>{data.authors.join(', ')}</small>
+      </div>
+      <div className="checkout-wrapper">
+        <button>Check Out</button>
+        <CheckoutMessage
+          isFetching={isFetching}
+          isStale={isStale}
+          refetch={refetch}
+        />
       </div>
     </div>
   );
