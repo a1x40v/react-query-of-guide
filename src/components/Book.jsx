@@ -3,8 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 
 const BASE_URL = 'http://localhost:3000';
 
-async function getData() {
-  const url = `${BASE_URL}/books/1`;
+async function getData(bookId) {
+  const url = `${BASE_URL}/books/${bookId}`;
 
   const response = await fetch(url);
 
@@ -18,15 +18,15 @@ async function getData() {
   return data;
 }
 
-function useBook() {
+function useBook(bookId) {
   return useQuery({
-    queryKey: ['book'],
-    queryFn: getData,
+    queryKey: ['book', bookId],
+    queryFn: () => getData(bookId)
   });
 }
 
-const Book = () => {
-  const { data, isPending, isError } = useBook();
+const Book = ({ bookId }) => {
+  const { data, isPending, isError } = useBook(bookId);
 
   if (isError) {
     return <div>Error fetching book data.</div>;
@@ -38,7 +38,6 @@ const Book = () => {
 
   return (
     <div>
-      <header>Query Library</header>
       <div>
         <img src={data.thumbnail} alt={data.title} width="200" />
       </div>

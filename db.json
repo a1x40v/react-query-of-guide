@@ -5,6 +5,18 @@
       "title": "The Hobbit",
       "authors": ["J.R.R. Tolkien"],
       "thumbnail": "https://m.media-amazon.com/images/I/712cDO7d73L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Fellowship Of The Ring",
+      "authors": ["J.R.R. Tolkien"],
+      "thumbnail": "https://m.media-amazon.com/images/I/71Ep7UNeTtL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Two Towers",
+      "authors": ["J.R.R. Tolkien"],
+      "thumbnail": "https://m.media-amazon.com/images/I/41HkOD2+e1L.jpg"
     }
   ]
 }
