@@ -1,0 +1,10 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Hobbit",
+      "authors": ["J.R.R. Tolkien"],
+      "thumbnail": "https://m.media-amazon.com/images/I/712cDO7d73L._AC_UF1000,1000_QL80_.jpg"
+    }
+  ]
+}
